@@ -22,6 +22,7 @@ import com.umeng.analytics.MobclickAgent;
 import timber.log.Timber;
 
 /**
+ * @author LIN
  * Created by 刘圣如 on 2017/8/24.
  */
 
