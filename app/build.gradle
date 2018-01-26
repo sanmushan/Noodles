@@ -15,8 +15,8 @@ android {
         applicationId "com.benxiang.noodles"
         minSdkVersion 15
         targetSdkVersion 25
-        versionCode 3
-        versionName "3.0"
+        versionCode 1
+        versionName "1.0.2018.01.26.01"
         /*    ndk {
                 moduleName "liblocSDK7a"
                 ldLibs "log"

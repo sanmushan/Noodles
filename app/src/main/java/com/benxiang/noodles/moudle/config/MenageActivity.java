@@ -124,7 +124,10 @@ public class MenageActivity extends BaseMenageActivity implements MenageView {
         }
     }
 
-    //接收数据
+    /**
+     * 接收数据
+     * @param comRecData
+     */
     @Subscribe(threadMode = ThreadMode.POSTING)
     public void onCardEvent(ComBean comRecData) {
         if (comRecData.makeOrRecycleNoodles == CardSerialOpenHelper.BOTTLED_WATER) {
@@ -312,57 +315,13 @@ public class MenageActivity extends BaseMenageActivity implements MenageView {
         // TODO: add setContentView(...) invocation
         ButterKnife.bind(this);
     }
-
+    //更新程序
     public void updateFun(){
-        UpdateKey.API_TOKEN = "05b5e0a2862b61a695daf7bc31a21321";
+        UpdateKey.API_TOKEN = "0fd94d488bb0e6a45efa575271c30808";
         UpdateKey.APP_ID = BuildConfig.APPLICATION_ID;
-        //下载方式:
-//        UpdateKey.DialogOrNotification=UpdateKey.WITH_DIALOG;//通过Dialog来进行下载
-        //UpdateKey.DialogOrNotification=UpdateKey.WITH_NOTIFITION;通过通知栏来进行下载(默认)
         UpdateFunGO.init(this);
         UpdateFunGO.manualStart(this);
     }
 
 
-//    private void checkUpdateVersion(String url) {
-////        if (data.version_code > BuildConfig.VERSION_CODE) {
-//            registerUpdateBroadcast();
-//            UpdateService.Builder.create(url).setIsSendBroadcast(true).build(this);
-////        } else {
-////            showWarningDialog("确定","已经是最新版本");
-////        }
-//    }
-//    private BroadcastReceiver updateAppReceiver;
-//
-//    private void registerUpdateBroadcast() {
-//        if (updateAppReceiver == null) {
-//            updateAppReceiver = new BroadcastReceiver() {
-//                @Override
-//                public void onReceive(Context context, Intent intent) {
-//                    if (intent.getAction().equals(UpdateService.ACTION)) {
-//                        int status = intent.getIntExtra(UpdateService.STATUS, -1);
-//                        switch (status) {
-//                            case UpdateService.UPDATE_PROGRESS_STATUS:
-//                                showLoadingDialog();
-//                                break;
-//                            case UpdateService.UPDATE_ERROR_STATUS:
-//                                hideLoadingDialog();
-//                                showError("更新失败");
-//                                break;
-//                            case UpdateService.UPDATE_SUCCESS_STATUS:
-//                                hideLoadingDialog();
-//                                break;
-//                        }
-//                    }
-//                }
-//            };
-//            LocalBroadcastManager.getInstance(this).registerReceiver(updateAppReceiver, new IntentFilter(UpdateService.ACTION));
-//        }
-//    }
-//
-//    private void unregisterUpdateBroadcast() {
-//        if (updateAppReceiver != null) {
-//            LocalBroadcastManager.getInstance(this).unregisterReceiver(updateAppReceiver);
-//        }
-//    }
 }
